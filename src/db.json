@@ -12,12 +12,5 @@
         "qqUrl": "https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&a=1&u=812125569&ac=CAEQgZuggwMY1sWQnAY4AEIgOGJjNjFiZWQ0ZGRmYWRlMjNlYTM5NzMyZDdjMTRlNzA%3D_xxx_sign&n=%E6%9F%A5%E6%97%A0%E6%AD%A4%E4%BA%BA&f=wallet",
         "wechatUrl": "wxp://f2f0JWaL9wtLsgJ29K7mJir5MhcTtP4FfpbD5KIHkCQSXFU",
         "aliUrl": "https://qr.alipay.com/fkx15247oiyvo6eho2pdhdf"
-    },
-    {
-        "id": "test",
-        "name": "test",
-        "qqUrl": "https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&a=1&u=763241889&ac=CAEQocv46wIY4fKMnAY4AEIgZDI5N2JiYmE1MjgzZjc0ZjUzNTgwMDlkYzVhNjk4ZmU%3D_xxx_sign&n=闪光蛋&f=wallet",
-        "wechatUrl": "wxp://f2f0j-KhNIHxQhNqcUzE3pG38N9ZdVVsbS91na0Qwot1I9E",
-        "aliUrl": "https://qr.alipay.com/fkx17963l823mbmenvoqi81"
     }
 ]
