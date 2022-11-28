@@ -170,7 +170,8 @@
                     id = '',
                     userAgent = navigator.userAgent,
                     colorLight = "#ffffff",
-                    colorDark = "#000000"
+                    colorDark = "#000000",
+                    tips = "长按识别二维码"
                 if (userAgent.match(/Alipay/i)) {
                     return window.location.href = setting.aliUrl;
                 }
@@ -184,6 +185,7 @@
                 } else {
                     id = 'all';
                     text = window.location.href;
+                    tips = '扫描二维码'
                 }
 
                 var node = document.createElement('div');
@@ -199,7 +201,7 @@
                             <img id="img-placeholder" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
                         </div>
                     </div>
-                    <div class="code-footer">扫描二维码向<strong>${setting.name}</strong>付款</div>
+                    <div class="code-footer">${tips}<strong>${setting.name}</strong>付款</div>
                `
 
                 document.body.appendChild(node);
