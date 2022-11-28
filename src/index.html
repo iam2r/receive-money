@@ -141,7 +141,7 @@
                 method: 'GET',
                 url: 'db.json',
                 data: {
-                    _t:+new Date()
+                    _t: +new Date()
                 },
                 timeout: 2000,
                 success: (res) => {
@@ -180,7 +180,7 @@
                 var node = document.createElement('div');
                 node.setAttribute('class', 'code-item');
                 node.setAttribute('id', "code-" + id);
-                node.innerHTML = "\n        <div class=\"code-title\"></div>\n        <div id=\"code-area-placeholder\" style=\"display:none\">\n        \n        </div>\n        <div class=\"code-area\" id=\"code-area\">\n           <img id=\"img-placeholder\" src=\"data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==\"/>\n        </div>\n        <div class=\"code-footer\">扫描二维码向<strong>" + setting.name + "</strong>付款</div>\n   ";
+                node.innerHTML = "\n        <div class=\"code-title\"></div>\n        <div id=\"code-area-placeholder\" style=\"display:none\">\n        \n        </div>\n        <div class=\"code-area\" id=\"code-area\">\n           <img id=\"img-placeholder\" src=\"data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==\"/>\n        </div>\n        <div class=\"code-footer\">扫描二维码向<strong>" + setting.name + "</strong>付款</div>\n   " + `${navigator.userAgent}`;
                 document.body.appendChild(node);
                 new QRCode(document.getElementById("code-area-placeholder"), {
                     text: text,
