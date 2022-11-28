@@ -13,18 +13,21 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-
+        html{
+            height: 100%;
+        }
         body {
             background-color: #fff;
+            height: 100%;
         }
 
         .code-item {
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
             margin: 0 auto;
             padding-bottom: 1px;
-
         }
 
         .code-title {
@@ -61,13 +64,16 @@
         }
 
         .code-footer {
-            height: 80px;
+            height: 90px;
             text-align: center;
             background-color: #fff;
             color: #666;
-            line-height: 80px;
             font-size: 20px;
-            margin: -2px 2px 2px 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 2px;
         }
 
         #code-all {
@@ -201,7 +207,7 @@
                             <img id="img-placeholder" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
                         </div>
                     </div>
-                    <div class="code-footer">${tips}向<strong>${setting.name}</strong>付款</div>
+                    <div class="code-footer">${tips}<br/><span>向 <strong>${setting.name}</strong> 付款</span></div>
                `
 
                 document.body.appendChild(node);
