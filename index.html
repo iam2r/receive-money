@@ -37,15 +37,28 @@
         }
 
         .code-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-            text-align: center;
+        .code-area .code-target {
+            width: 60%;
+            min-width: 100px;
+            margin: 80px 0;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
 
-        .code-area>img {
-            margin: 80px 0;
-            width: 60%;
-            min-width: 100px;
+        .code-area .code-target>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
         }
 
         .code-footer {
@@ -155,16 +168,18 @@
             })
             function doAction(setting) {
                 var text = '',
-                    id = '';
-
-                if (navigator.userAgent.match(/Alipay/i)) {
+                    id = '',
+                    userAgent = navigator.userAgent,
+                    colorLight = "#ffffff",
+                    colorDark = "#000000"
+                if (userAgent.match(/Alipay/i)) {
                     return window.location.href = setting.aliUrl;
                 }
 
-                if (navigator.userAgent.match(/MicroMessenger\//i)) {
+                if (userAgent.match(/MicroMessenger\//i)) {
                     id = 'wechat';
                     text = setting.wechatUrl;
-                } else if (navigator.userAgent.match(/QQ\//i)) {
+                } else if (userAgent.match(/QQ\//i)) {
                     id = 'qq';
                     text = setting.qqUrl;
                 } else {
@@ -175,15 +190,24 @@
                 var node = document.createElement('div');
                 node.setAttribute('class', 'code-item');
                 node.setAttribute('id', "code-" + id);
-                node.innerHTML = "\n        <div class=\"code-title\"></div>\n        <div id=\"code-area-placeholder\" style=\"display:none\">\n        \n        </div>\n        <div class=\"code-area\" id=\"code-area\">\n           <img id=\"img-placeholder\" src=\"data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==\"/>\n        </div>\n        <div class=\"code-footer\">扫描二维码向<strong>" + setting.name + "</strong>付款</div>\n   ";
+
+                node.innerHTML =
+                    `
+                    <div class="code-title"></div>
+                    <div id="code-area-placeholder" style="display:none"></div>
+                    <div class="code-area">
+                        <div class="code-target" style="background-color:${colorLight}">
+                            <img id="img-placeholder" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==">
+                        </div>
+                    </div>
+                    <div class="code-footer">扫描二维码向<strong>${setting.name}</strong>付款</div>
+               `
+
                 document.body.appendChild(node);
                 new QRCode(document.getElementById("code-area-placeholder"), {
                     text: text,
-                    width: 128,
-                    height: 128,
-                    colorDark: "#000000",
-                    colorLight: "#ffffff",
-                    correctLevel: QRCode.CorrectLevel.H
+                    colorDark: colorDark,
+                    colorLight: colorLight,
                 });
                 var raf = function () {
                     return window.requestAnimationFrame;
