@@ -1,0 +1,23 @@
+{
+  "name": "receive-money",
+  "version": "1.0.0",
+  "description": "多合一收款码",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "start": "gulp start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iam2r/receive-money.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iam2r/receive-money/issues"
+  },
+  "homepage": "https://github.com/iam2r/receive-money#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
